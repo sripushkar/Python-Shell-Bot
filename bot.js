@@ -27,14 +27,14 @@ bot.on('message', msg => {
 });
 
 function isCommand(str){
-  if(str.substring(0,1) === ">"){
+  if(str.substring(0,2) === ">>"){
     return true;
   }
   return false;
 }
 
 function formatMsg(str){
-  newStr = str.substring(1)
+  newStr = str.substring(2)
   newStr = newStr.replace("’", "'");
   newStr = newStr.replace("“", "\"");
   newStr = newStr.replace("”", "\"");
