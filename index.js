@@ -1,5 +1,6 @@
 require('dotenv').config();
 const Discord = require('discord.js');
+let {PythonShell} = require('python-shell')
 const bot = new Discord.Client();
 const TOKEN = process.env.TOKEN;
 
@@ -12,8 +13,15 @@ bot.on('ready', () => {
 
 bot.on('message', msg => {
   if(isCommand(msg.content)){
-    reply = removePrefix(msg.content)
-    msg.channel.send(reply)
+    python = removePrefix(msg.content)
+
+    PythonShell.runString(python, null, function (err, results) {
+      if (err) throw err;
+      msg.channel.send(String(results))
+      console.log('finished');
+    });
+
+
   }
 });
 
