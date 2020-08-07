@@ -11,7 +11,19 @@ bot.on('ready', () => {
 
 
 bot.on('message', msg => {
-  if(msg.content === ">>>print('hello')"){
-    msg.channel.send("hello")
+  if(isCommand(msg.content)){
+    reply = removePrefix(msg.content)
+    msg.channel.send(reply)
   }
 });
+
+function isCommand(str){
+  if(str.substring(0,3) === ">>>"){
+    return true;
+  }
+  return false;
+}
+
+function removePrefix(str){
+  return str.substring(3);
+}
