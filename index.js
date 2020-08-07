@@ -10,7 +10,6 @@ bot.on('ready', () => {
   console.info(`Logged in as ${bot.user.tag}!`);
 });
 
-
 bot.on('message', msg => {
   if(isCommand(msg.content)){
     python = formatMsg(msg.content)
