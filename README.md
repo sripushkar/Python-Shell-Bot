@@ -3,9 +3,7 @@
 
 Python Shell Bot is a bot built with node.js that brings adds a Python Shell into a server. This is mostly for fun, and does not support input(yet).
 
-### Add the bot:
-You can add the bot with this link: https://discord.com/api/oauth2/authorize?client_id=741330217351643176&permissions=10240&scope=bot
-### To build manually 
+### To build 
 You will need the following installed:
 * node.js
 * npm
